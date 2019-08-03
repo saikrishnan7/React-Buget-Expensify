@@ -1,0 +1,5 @@
+{
+    "git.enableSmartCommit": true,
+    "git.postCommitCommand": "push",
+    "github.remoteName": "https://github.com/saikrishnan7/React-Expensify.git"
+}
