@@ -17,14 +17,26 @@
 //     console.log(`It's ${temperature} in ${city}.`);
 // }
 
-const book = {
-    title: 'Ego is the Enemy',
-    author: 'Ryan Holiday',
-    publisher: {
-        //name: 'Penguin'
-    }
-};
+// const book = {
+//     title: 'Ego is the Enemy',
+//     author: 'Ryan Holiday',
+//     publisher: {
+//         name: 'Penguin'
+//     }
+// };
 
-const { name: publisherName = 'Self-Published' } = book.publisher; 
+// const { name: publisherName = 'Self-Published' } = book.publisher; 
 
-console.log(publisherName); //Penguin, Self-Published
+// console.log(publisherName); //Penguin, Self-Published
+
+const address = ['110 W CityLine Dr', 'Richardson', 'Texas', '75082'];
+
+const [street, city, state, zip] = address;   //any name you like, not like objects.
+
+console.log(`You are in ${city}, ${state}.`);
+
+const item = ['Coffee (hot)', '$2.00', '$2.50', '$2.75'];
+
+const [name, , price] = item;
+
+console.log(`A medium ${name} costs ${price}`);
