@@ -4,7 +4,6 @@ import { setTextFilter, sortByAmount, sortByDate } from '../actions/filters';
 
 const ExpenseListFilters = (props) => (
     <div>
-        {console.log(props)}
         <input type="text" value={props.filters.text} onChange={props.onChangeFilter}
         />
         <select value={props.filters.sortBy} onChange={props.onChangeForSort}>
