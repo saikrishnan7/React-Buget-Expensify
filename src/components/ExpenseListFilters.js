@@ -1,17 +1,39 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setTextFilter, sortByAmount, sortByDate } from '../actions/filters';
+import { DateRangePicker } from 'react-dates';
+import { setTextFilter, sortByAmount, sortByDate, setStartDate, setEndDate } from '../actions/filters';
 
-const ExpenseListFilters = (props) => (
-    <div>
-        <input type="text" value={props.filters.text} onChange={props.onChangeFilter}
-        />
-        <select value={props.filters.sortBy} onChange={props.onChangeForSort}>
-            <option value="date">Date</option>
-            <option value="amount">Amount</option>
-        </select>
-    </div>
-);
+class ExpenseListFilters extends React.Component {
+    state = {
+        calendarFocused: null
+    };
+    
+    onFocusChange = (calendarFocused) => {
+        this.setState(() => ({calendarFocused}));
+    }
+    render() {
+        return(
+            <div>
+                <input type="text" value={this.props.filters.text} onChange={this.props.onChangeFilter}
+                />
+                <select value={this.props.filters.sortBy} onChange={this.props.onChangeForSort}>
+                    <option value="date">Date</option>
+                    <option value="amount">Amount</option>
+                </select>
+                <DateRangePicker
+                    startDate={this.props.filters.startDate}
+                    endDate={this.props.filters.endDate}
+                    onDatesChange={this.props.onDatesChange}
+                    focusedInput={this.state.calendarFocused}
+                    onFocusChange={this.onFocusChange}
+                    showClearDates={true}
+                    numberOfMonths={1}
+                    isOutsideRange={() => false}
+                />
+            </div>
+        );
+    }
+}
 
 const mapStateToProps = (state) => {
     return {
@@ -31,6 +53,12 @@ const mapDispatchToProps = (dispatch) => {
             else if(e.target.value === 'amount') {
                 dispatch(sortByAmount());
             }
+        },
+        onDatesChange: ({startDate, endDate}) => {
+            console.log(startDate);
+            console.log(endDate);
+            dispatch(setStartDate(startDate));
+            dispatch(setEndDate(endDate));
         }
     };
 }
