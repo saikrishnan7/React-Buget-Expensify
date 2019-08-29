@@ -7,6 +7,7 @@ import { addExpense } from './actions/expenses';
 import { setTextFilter } from './actions/filters';
 import './styles/styles.scss';
 import 'normalize.css/normalize.css';
+import 'react-dates/lib/css/_datepicker.css'; 
 
 const store = configureStore();
 store.dispatch(addExpense({ description: 'Water Bill', amount: 4500, createdAt: 1200}));
