@@ -16,6 +16,8 @@ var firebaseConfig = {
 
   const database = firebase.database();
 
+  export { firebase, database as default };
+
 //   database.ref('notes').push({
 //       title: 'To Do',
 //       body: 'Go for a run'
@@ -44,7 +46,7 @@ database.ref('expenses')
         console.log(expenses);
     });
 */
-database.ref('expenses').on('child_removed', (snapshot) => {
+/* database.ref('expenses').on('child_removed', (snapshot) => {
     console.log(snapshot.key, snapshot.val());
 });
 
@@ -54,7 +56,7 @@ database.ref('expenses').on('child_changed', (snapshot) => {
 
 database.ref('expenses').on('child_added', (snapshot) => {
     console.log(snapshot.key, snapshot.val());
-});
+}); */
 //   const notes = [{
 //       id: '12',
 //       title: 'First note!',

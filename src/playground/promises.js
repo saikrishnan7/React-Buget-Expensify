@@ -1,19 +1,22 @@
-/*const promise = new Promise((resolve, reject) => {
+const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
-        // resolve({
-        //     name: 'Sai Srivatsan',
-        //     age: 26
-        // });
-        reject('Something went wrong');
+        resolve({
+            name: 'Sai Srivatsan',
+            age: 26
+        });
+        //reject('Something went wrong');
     }, 5000)  
 });
 
 console.log('before');
 
 promise.then((data) => {
-    console.log(data);
+    console.log('1', data);
+    return 'some data';
+}).then((str) => {
+    console.log('does this run?', str);
 }).catch((error) => {
     console.log('error: ', error);
 });
 
-console.log('after');*/
+console.log('after');
