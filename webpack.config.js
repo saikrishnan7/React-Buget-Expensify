@@ -11,7 +11,7 @@ else if(process.env.NODE_ENV === 'development') {
     require('dotenv').config({ path: '.env.development'});
 }
 
-export default (env) => {
+module.exports = (env) => {
     const isProduction = env === 'production';
     const CSSExtract = new ExtractTextPlugin('styles.css');
 
