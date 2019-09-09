@@ -1,7 +1,6 @@
+const path = require('path');
 const webpack = require('webpack');
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-
-console.log(require(path.join(__dirname,'public')));
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -19,7 +18,7 @@ export default (env) => {
     return {
         entry: './src/app.js',
         output: {
-            path: join(__dirname,'public','dist'),
+            path: path.join(__dirname,'public','dist'),
             filename: 'bundle.js'
         },
         module: {
@@ -61,7 +60,7 @@ export default (env) => {
         ],
         devtool: isProduction ? 'source-map' : 'inline-source-map',
         devServer: {
-            contentBase: join(__dirname, 'public'),
+            contentBase: path.join(__dirname, 'public'),
             historyApiFallback: true,
             publicPath: '/dist/'
         }
