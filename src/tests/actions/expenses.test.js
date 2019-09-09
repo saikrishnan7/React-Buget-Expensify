@@ -73,10 +73,7 @@ test('should add expense with defaults to database and store', () => {
             type: 'ADD_EXPENSE',
             expense: {
                 id: expect.any(String),
-                description: '', 
-                note: '', 
-                amount: 0, 
-                createdAt: 0
+                ...expenseData
             }
         });
         database.ref(`expenses/${actions[0].expense.id}`).once('value').then((snapshot) => {

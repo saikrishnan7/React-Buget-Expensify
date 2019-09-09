@@ -3,13 +3,12 @@ import expenses from '../tests/fixtures/expenses';
 import moment from 'moment';
 
 var firebaseConfig = {
-    apiKey: "AIzaSyDENfsy5l1n1NL_w1nqxsw2i-dq8hB4OuQ",
-    authDomain: "expensify-e9733.firebaseapp.com",
-    databaseURL: "https://expensify-e9733.firebaseio.com",
-    projectId: "expensify-e9733",
-    storageBucket: "",
-    messagingSenderId: "27120159886",
-    appId: "1:27120159886:web:52e3c2be38b3d534458ddf"
+    apiKey: process.env.FIREBASE_API_KEY,
+    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+    databaseURL: process.env.FIREBASE_DATABASE_URL,
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
