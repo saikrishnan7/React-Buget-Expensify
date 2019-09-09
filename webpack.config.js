@@ -1,8 +1,7 @@
-import { join } from 'path';
 const webpack = require('webpack');
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
-console.log(join(__dirname,'public'));
+console.log(require(path.join(__dirname,'public')));
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
