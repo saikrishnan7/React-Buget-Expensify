@@ -3,11 +3,11 @@ import { shallow } from 'enzyme';
 import { ExpensesSummary } from '../../components/ExpensesSummary';
 
 test('should correctly render ExpensesSummary with 1 expense', () => {
-    //const wrapper = shallow(<ExpensesSummary expenseCount={1} expensesTotal={235}/>);
-    //expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<ExpensesSummary expenseCount={1} expensesTotal={235}/>);
+    expect(wrapper).toMatchSnapshot();
 });
 
 test('should correctly render ExpensesSummary with 23 expense', () => {
-    //const wrapper = shallow(<ExpensesSummary expenseCount={23} expensesTotal={2352342873}/>);
-    //expect(wrapper).toMatchSnapshot();
+    const wrapper = shallow(<ExpensesSummary expenseCount={23} expensesTotal={2352342873}/>);
+    expect(wrapper).toMatchSnapshot();
 });

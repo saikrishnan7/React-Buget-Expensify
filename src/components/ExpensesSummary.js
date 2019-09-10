@@ -5,7 +5,7 @@ import selectExpenses from '../selectors/expenses';
 import selectExpensesTotal from '../selectors/expenses-total';
 
 
-const ExpensesSummary = ({ expenseCount, expensesTotal }) => {
+export const ExpensesSummary = ({ expenseCount, expensesTotal }) => {
     const formattedExpensesTotal = numeral(expensesTotal / 100).format('$0,0.00');
     return (
         <div>
