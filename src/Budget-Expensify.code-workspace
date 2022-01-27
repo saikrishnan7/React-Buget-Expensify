@@ -1,10 +1,7 @@
 {
-	"folders": [
-		{
-			"path": "C:\\Dev\\Workspace\\PersonalDev\\React\\Budget-Expensify\\budget-app-expensify"
-		}
-	],
-	"settings": {
-		"github.remoteName": "https://github.com/saikrishnan7/React-Expensify.git"
-	}
+    "folders": [
+        {
+            "path": "."
+        }
+    ]
 }
